@@ -10,13 +10,13 @@ public class ArrayNilai24 {
             nilaiAkhir[i] = sc.nextInt();
         }
 
-        System.out.println("\n--- Daftar Mahasiswa yang LULUS (Nilai > 70) ---");
+        System.out.println("\n--- Status Kelulusan Mahasiswa ---");
         for (int i = 0; i < nilaiAkhir.length; i++) {
-            if (nilaiAkhir[i] > 70) {
-                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (LULUS)");
+                String status = (nilaiAkhir[i] > 70) ? "LULUS" : "TIDAK LULUS";
+                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + "(" + status + ")");
             }
         
-        }
+        
         sc.close();
     }
 }
