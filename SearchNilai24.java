@@ -28,12 +28,19 @@ public class SearchNilai24 {
             }
         }
 
-        System.out.println();
+        System.out.println("\n-------------------------------");
+        System.out.println("     HASIL PENCARIAN NILAI     ");
+        System.out.println("-------------------------------");
+
         if (ditemukan) {
-            System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + indeksKetemu + " (urutan ke-" + (indeksKetemu + 1) + ").");
+            System.out.println(" Sukses! Nilai " + key + " ditemukan.");
+            System.out.println(" Posisi indeks: " + indeksKetemu);
+            System.out.println(" Urutan data: Ke-" + (indeksKetemu + 1));
         } else {
-            System.out.println("Nilai " + key + " tidak ditemukan di dalam array.");
+            System.out.println(" Maaf, nilai yang dicari (" + key + ") tidak ditemukan di dalam array.");
+            System.out.println(" Silakan periksa kembali nilai yang Anda masukkan.");
         }
+        System.out.println("-------------------------------");
         input.close();
     }
 }
