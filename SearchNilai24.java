@@ -1,19 +1,39 @@
+import java.util.Scanner;
 public class SearchNilai24 {
     public static void main(String[] args) {
-        int[] nilai = {78, 65, 90, 55, 88, 72};
-        int key = 90;
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah elemen array nilai: ");
+        int jumlah = input.nextInt();
+
+        int[] nilai = new int[jumlah];
+
+        System.out.println("Masukkan elemen nilai mahasiswa:");
+        for (int i = 0; i < nilai.length; i++) {
+            System.out.print("Nilai ke-" + (i + 1) + ": ");
+            nilai[i] = input.nextInt();
+        }
+
+        System.out.print("\nMasukkan nilai yang ingin dicari (key): ");
+        int key = input.nextInt();
+
         boolean ditemukan = false;
+        int indeksKetemu = -1;
 
         for (int i = 0; i < nilai.length; i++){
             if (nilai[i] == key) {
-                System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + (i + 1));
                 ditemukan = true;
+                indeksKetemu = i;
                 break;
             }
         }
 
-        if (!ditemukan) {
-            System.out.println("Nilai " + key + " tidak ditemukan.");
+        System.out.println();
+        if (ditemukan) {
+            System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + indeksKetemu + " (urutan ke-" + (indeksKetemu + 1) + ").");
+        } else {
+            System.out.println("Nilai " + key + " tidak ditemukan di dalam array.");
         }
+        input.close();
     }
 }
